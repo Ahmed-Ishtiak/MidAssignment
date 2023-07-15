@@ -1,0 +1,35 @@
+﻿@model List<MidAssignment.Models.RestuarentDTO>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Collect Request Dashboard</h2>
+<br>
+@Html.Raw(TempData["DeleteMessage"])
+<p style="color:green;">@TempData["InsertMessage"]</p>
+<a href="/Home/Create">Make Request</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID
+        <th>Name</th>
+        <th>Description</th>
+        <th>Maxtime</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Id </td>
+                    <td>@item.Name </td>
+                    <td>@item.Description </td>
+                    <td>@item.MaxTime</td>
+                    <td>@item.Status</td>
+                </tr>
+            } 
+    </tbody>
+
+</table>
+

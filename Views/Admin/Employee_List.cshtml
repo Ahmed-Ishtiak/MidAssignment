@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MidAssignment.EF.Models.Employee>
+@{
+    ViewBag.Title = "Employee_List";
+}
+
+<h2>Employee_List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EId</td>
+                <td>@item.EmployeeName</td>
+                <td>@item.Gender</td>
+                <td>@item.DOB</td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Back to List", "Index")

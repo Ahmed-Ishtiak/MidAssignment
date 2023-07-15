@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MidAssignment.EF.Models.Restuarent>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Dashboard</h2>
+@Html.ActionLink("Assign_Employee","Assign_Employee")
+&nbsp;@Html.ActionLink("Create_Employee","Create_Employee")
+&nbsp;@Html.ActionLink("Employee_List","Employee_List")
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Maxtime</th>
+        <th>Status</th>      
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.MaxTime</td>
+                    <td>@item.Status</td>
+                   
+                    
+                    <td>@Html.ActionLink("Accept", "Accept", new {id=item.Id})</td>
+                    <td>@Html.ActionLink("Decline", "Decline", new {id=item.Id})</td>
+                </tr>
+            }
+    </tbody>
+</table>

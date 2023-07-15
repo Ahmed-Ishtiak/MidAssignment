@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MidAssignment.EF.Models.Employee>
+@{
+    ViewBag.Title = "Assign_Employee";
+}
+
+<h2>Assign_Employee</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Employee Name</th>
+            <th>Phone Number</th>
+            <th>Restuarent Name</th>
+            <th>Description</th>
+            <th>Maxtime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    
+                    <td>@item.EmployeeName</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.restuarent.Name</td>
+                    <td>@item.restuarent.Description</td>
+                    <td>@item.restuarent.MaxTime</td>
+                </tr>
+            }
+    </tbody>
+</table>
